@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "121f8378-5b51-4516-83c5-3c587f1eb0ce",
+		"name": "LPG Vending Machines",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11159697"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "manivannan",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "lifo@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{APIURL}}api/token/",
+					"host": [
+						"{{APIURL}}api"
+					],
+					"path": [
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Machines",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{BEARER_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{APIURL}}api/machines/1",
+					"host": [
+						"{{APIURL}}api"
+					],
+					"path": [
+						"machines",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Machine Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{BEARER_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"machine_id\":\"123456890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL}}api/check-subscription/",
+					"host": [
+						"{{APIURL}}api"
+					],
+					"path": [
+						"check-subscription",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

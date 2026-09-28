@@ -1,0 +1,302 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | LPG Vending Machine Admin{% endblock %}
+
+{% block usertools %}{% endblock %}
+
+{% block extrastyle %}
+<link rel="icon" href='{% static "admin/img/favicon.png" %}'/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #22006b;
+    --secondary: #311688;
+    --accent: #4527A0;
+    --primary-fg: #fff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gray-100);
+}
+
+/* Header */
+#header {
+    background: var(--primary);
+    color: var(--primary-fg);
+    padding: 8px 20px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+#header a:link, #header a:visited {
+    color: var(--primary-fg);
+}
+
+/* Logo styling */
+#site-name a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#site-name img {
+    height: 32px;
+    margin-right: 10px;
+}
+
+/* Bootstrap Navbar Customization */
+.navbar {
+    background-color: var(--secondary) !important;
+    padding: 0 !important;
+    min-height: 45px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+}
+
+.container-fluid {
+    padding: 0 20px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--primary-fg) !important;
+    padding: 10px 20px !important;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    font-size: 0.875rem;
+    line-height: 25px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: var(--accent);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: var(--accent);
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        padding: 0;
+    }
+    .navbar-nav {
+        width: 100%;
+    }
+    .navbar-toggler {
+        margin: 5px 0;
+        padding: 4px 8px;
+    }
+}
+
+/* Module styling */
+.module {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: var(--secondary);
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+/* Table styling */
+.results {
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+thead th {
+    background: var(--gray-100) !important;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+tr:nth-child(odd), .row1 {
+    background: #fff;
+}
+
+tr:nth-child(even), .row2 {
+    background: var(--gray-100);
+}
+
+/* Links */
+a:link, a:visited {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Buttons */
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: var(--primary);
+    border-radius: 0.375rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+}
+
+/* Form styling */
+.form-row {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+input[type="url"], 
+select, 
+textarea {
+    border: 1px solid var(--gray-300);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #444;
+}
+
+/* Breadcrumbs */
+div.breadcrumbs {
+    background: var(--secondary);
+    color: var(--primary-fg);
+    margin: 0;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Content area */
+#content {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.content {
+    background: transparent;
+}
+
+/* Message boxes */
+.messagelist li.success {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* User Menu */
+.ms-lg-auto {
+    margin-left: auto !important;
+}
+
+@media (max-width: 992px) {
+    .ms-lg-auto {
+        margin-left: 0 !important;
+    }
+}
+
+.nav-link i {
+    margin-right: 5px;
+}
+ul.navbar-nav li{
+list-style-type: none;
+}
+a.nav-link:hover{
+    text-decoration: none;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="url"], select, textarea {
+    border: 1px solid var(--gray-300);
+    border-radius: 0.375rem;
+     padding: inherit; 
+    font-size: 0.875rem;
+}
+.vTextField{
+    width: 100% !important;
+}
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'admin/img/logo-light.svg' %}" alt="LIFO Technologies">
+        LPG Vending Machine Admin
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/admin/auth/user/' %}active{% endif %}" href="{% url 'admin:auth_user_changelist' %}">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/admin/vending/machine/' %}active{% endif %}" href="{% url 'admin:vending_machine_changelist' %}">Machines</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/admin/vending/machinesubscription/' %}active{% endif %}" href="{% url 'admin:vending_machinesubscription_changelist' %}">Subscriptions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/admin/vending/camerafeed/' %}active{% endif %}" href="{% url 'admin:vending_camerafeed_changelist' %}">Cameras</a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                    <a class="nav-link" href="{% url 'admin:password_change' %}">
+                        <i class="fas fa-key"></i> Change Password
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:logout' %}">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block footer %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %} 

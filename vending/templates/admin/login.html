@@ -1,0 +1,105 @@
+{% extends "admin/login.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="icon" href='{% static "admin/img/favicon.png" %}'/>
+<style>
+:root {
+    --primary: #22006b;
+    --secondary: #311688;
+    --accent: #4527A0;
+    --primary-fg: #fff;
+}
+
+body.login {
+    background: var(--gray-100);
+    font-family: 'Inter', sans-serif;
+}
+
+.login {
+    background: url('{% static "admin/img/login-bg.jpg" %}') !important;
+    height: auto;
+    background-size: cover !important;
+
+}
+
+.login #header {
+    background: var(--primary);
+    color: var(--primary-fg);
+    height: auto;
+    padding: 15px 20px;
+}
+
+.login #header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.login #container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    margin-top: 100px;
+    padding: 0;
+}
+
+.login #content {
+    padding: 20px;
+}
+
+.login form {
+    margin-top: 20px;
+}
+
+.login .form-row {
+    padding: 10px 0;
+}
+
+.login .form-row label {
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.login .form-row input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+}
+
+.login .submit-row {
+    padding: 20px 0 0;
+}
+
+.login .submit-row input {
+    background: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.login .submit-row input:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+    transition: all 0.2s;
+}
+
+.login .errornote {
+    background: #fee;
+    border: 1px solid #fcc;
+    border-radius: 4px;
+    color: #c00;
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+}
+</style>
+{% endblock %} 

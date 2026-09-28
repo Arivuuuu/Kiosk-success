@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bharatgas Kiosk</title>
+
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+
+  </head>
+  <body class="blue-bg">    
+    <section class="main-section hv100 process-page">
+        <div class="container-fluid hv100">
+            <div class="row gx-0 center-container">
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-12">
+                    <div class="process-left">
+                      <div class="logo-content mb-5">
+                        <img src="../images/logo.svg" class="img-fluid logo" alt="" title="Bharat Gas" />                            
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="language-select float-end">
+                      <div class="dropdown">
+                          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Eng
+                          </button>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+                              <li class="active"><a class="dropdown-item" href="#">English</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="process-left">                        
+                        <div class="timeline-tag">
+                            <ul>
+                                <li class="active">Enter Details</li>
+                                <li>Payment</li>
+                                <li class="last">Cylinder Collection</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h3 class="mt-5">Capturing POI details, please wait.</h3>
+                        <p class="timer-text mt-5"><img src="../images/clock.svg" alt="" title="" /> <span id="timer2">00.00</span></p>         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- POI Success Modal Start -->
+    <div class="modal custom-modal-md" id="poiSuccessModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">           
+            <div class="modal-body text-center">              
+              <div class="thumb">
+                <img src="../images/poi-success.svg" alt="" title="" /> 
+              </div>
+              <h2 class="heading4">POI details captured successfully!</h2>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- POI Success Modal End  -->
+
+    <!-- Error Modal Start -->
+    <div class="modal custom-modal-md" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">           
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Error</h5>
+              <div class="icon red">
+                <img src="../images/error.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">No cylinder placed, the session will now expire.</p>
+              <p class="text-gray">You will be redirected to homepage. Please retry.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Error Modal End  -->
+
+    <!-- Cancel Modal Start -->
+    <div class="modal custom-modal-md" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">           
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Cancel</h5>
+              <div class="icon red">
+                <img src="../images/cancel.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">You have selected ‘Cancel,’ this will terminate the process. <br/> <strong>Are you sure you want to proceed with cancellation?</strong>  </p>
+              <p class="text-gray">You are just 4 steps away from completion.</p>
+              <div class="button-group group2 mt-5">
+                <a href="#" class="btn btn-outline-primary me-3">Cancel</a>
+                <a href="delivery-process-payment-process.html" class="btn btn-primary">Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Cancel Modal End  -->
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+    <script>
+    // Start the timer
+    // Timer function
+    let elapsedTime = 0; // Start time
+    const maxTime = 100; // Maximum time in seconds
+    const timerElement = document.getElementById('timer2');
+
+    function updateTimer() {
+    const minutes = Math.floor(elapsedTime / 60).toString().padStart(2, '0');
+    const seconds = (elapsedTime % 60).toString().padStart(2, '0');
+    timerElement.textContent = `${minutes}:${seconds}`;
+    
+    elapsedTime++;
+
+    if (elapsedTime > maxTime) {
+        clearInterval(timerInterval);
+        timerElement.textContent = "Completed!";
+    }
+    }
+
+    // Start the timer
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call to display the starting time
+    // End
+
+    setTimeout(function() {
+        window.location.href = "delivery-process-payment-details.html"; 
+    }, 5000); // 10000 milliseconds = 10 seconds
+</script>
+
+  </body>
+</html>

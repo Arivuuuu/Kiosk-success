@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bharatgas Kiosk</title>
+
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+
+  </head>
+  <body class="blue-bg">    
+    <section class="main-section hv100 process-page payment-process step3">
+        <div class="container-fluid hv100">
+            <div class="row gx-0 center-container">
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="process-left">
+                        <div class="logo-content mb-5">
+                            <img src="../images/logo.svg" class="img-fluid logo" alt="" title="Bharat Gas" />                            
+                        </div>
+                        <div class="timeline-tag">
+                          <ul>
+                            <li class="complete">Enter Details</li>
+                            <li class="active">Payment</li>
+                            <li class="last">Cylinder Collection</li>
+                          </ul>
+                        </div>
+                        <div class="clearfix"></div>                    
+                        <div class="payment-amount">
+                            <h3 class="mt-2">Please proceed with payment</h3>                        
+                            <p>Total amount to be paid is ₹799</p>
+                        </div>
+                        <div class="payment-type">
+                            <!-- Start -->
+                            <div class="payment-row">
+                                <div class="radiobuttons">
+                                    <div class="radio radio-primary radio-inline" data-bs-toggle="modal" data-bs-target="#scanPayModal"> <input name="radio" value="1" id="radio1" type="radio">
+                                      <label for="radio1"><img src="../images/qrcode.svg" alt="" title="" /><span>Scan and Pay</span></label>
+                                    </div>
+                                </div>
+                                <p>Google Pay, Phonepe, Paytm & more</p>
+                            </div>
+                            <!-- End -->
+                             <!-- Start -->
+                            <div class="payment-row">
+                                <div class="radiobuttons">
+                                    <div class="radio radio-primary radio-inline" data-bs-toggle="modal" data-bs-target="#cardModal"> <input name="radio" value="2" id="radio2" type="radio">
+                                      <label for="radio2"><img src="../images/card.svg" alt="" title="" /><span>Credit/Debit card</span></label>
+                                    </div>
+                                </div>
+                                <p>Visa, Mastercard, Rupay & more</p>
+                            </div>
+                            <!-- End -->
+                             <!-- Start -->
+                            <div class="payment-row">
+                                <div class="radiobuttons">
+                                    <div class="radio radio-primary radio-inline" data-bs-toggle="modal" data-bs-target="#upiPayModal"> <input name="radio" value="3" id="radio3" type="radio">
+                                      <label for="radio3"><img src="../images/upi.svg" alt="" title="" /><span>UPI</span></label>
+                                    </div>
+                                </div>
+                                <p>Google Pay, Phonepe, Paytm & more</p>
+                            </div>
+                            <!-- End -->
+                             <!-- Start -->
+                            <div class="payment-row last">
+                                <div class="radiobuttons">
+                                    <div class="radio radio-primary radio-inline" data-bs-toggle="modal" data-bs-target="#netBankingModal"> <input name="radio" value="4" id="radio4" type="radio">
+                                      <label for="radio4"><img src="../images/netbank.svg" alt="" title="" /><span>Net Banking</span></label>
+                                    </div>
+                                </div>
+                                <p>Pay with your favourite bank</p>
+                            </div>
+                            <!-- End -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="process-right">
+                        <div class="content-center">
+                            <div class="language-select float-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Eng
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+                                        <li class="active"><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>                            
+                            <div class="animation-image text-end half">
+                              <img src="../images/refill-animation-3.gif" alt="Animtion" title="Animation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scan Pay Modal Start -->
+    <div class="modal custom-modal-md" id="scanPayModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">            
+            <div class="modal-body text-center pb-5">
+              <div class="modal-heading">
+                <h5><img src="../images/qrcode-blue.svg" alt="" title="" /> Scan and Pay</h5>
+                <p>Google Pay, Phonepe, Paytm & more</p>
+              </div>   
+              <h3>Scan the QR code for payment</h3>       
+              <div class="scan-code">
+                <img src="../images/qrcode-scan.svg" alt="" title="" /> 
+              </div>
+              <div class="button-group group2 mt-4">
+                <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#paymentFailedModal" class="btn btn-outline-danger me-3">Payment Failure</a>
+                <a href="delivery-process-payment-success.html" class="btn btn-success">Payment Success</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Scan Pay Modal End  -->
+
+    <!-- Credit/Debit Card Modal Start -->
+    <div class="modal custom-modal-md" id="cardModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">            
+            <div class="modal-body pb-5">
+              <div class="modal-heading">
+                <h5><img src="../images/card-blue.svg" alt="" title="" /> Credit/ Debit Card</h5>
+                <p>Visa, Mastercard, Rupay &amp; more</p>
+              </div>
+              <div class="card-form">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Name on Card</label>
+                                <input type="text" class="form-control" placeholder="Text here" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Card Number</label>
+                                <input type="text" class="form-control" placeholder="Text here" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" class="form-control" placeholder="Text here" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group cvv">
+                                <label>CVV</label>
+                                <input type="text" class="form-control" placeholder="Text here" />
+                                <a href="#" class="info-icon"><img src="../images/info.svg" alt="" title="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+              </div>   
+              
+              <div class="button-group group2 mt-4">
+                <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#paymentFailedModal" class="btn btn-outline-danger me-3">Payment Failure</a>
+                <a href="delivery-process-payment-success.html" class="btn btn-success">Payment Success</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Credit/Debit Card Modal End  -->
+
+    <!-- UPI Modal Start -->
+    <div class="modal custom-modal-md" id="upiPayModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">            
+            <div class="modal-body pb-5">
+              <div class="modal-heading">
+                <h5><img src="../images/upi-blue.svg" alt="" title="" /> UPI</h5>
+                <p>Google Pay, Phonepe, Paytm & more</p>
+              </div>
+              <div class="card-form">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Add UPI ID</label>
+                                <input type="text" class="form-control" placeholder="Enter valid UPI ID" />
+                            </div>
+                            <div class="upi-type mt-3">
+                                <ul>
+                                    <li><a href="#"><img src="../images/gpay.svg" alt="" title="" /></a></li>
+                                    <li><a href="#"><img src="../images/phone-pay.svg" alt="" title="" /></a></li>
+                                    <li><a href="#"><img src="../images/paytm.svg" alt="" title="" /></a></li>
+                                    <li class="link"><a href="#">Other</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+              </div>   
+              
+              <div class="button-group group2 mt-4">
+                <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#paymentFailedModal" class="btn btn-outline-danger me-3">Payment Failure</a>
+                <a href="delivery-process-payment-success.html" class="btn btn-success">Payment Success</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- UPI Modal End  -->
+
+    <!-- Net Banking Modal Start -->
+    <div class="modal custom-modal-md" id="netBankingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">            
+            <div class="modal-body pb-5">
+              <div class="modal-heading">
+                <h5><img src="../images/netbanking-blue.svg" alt="" title="" /> Net Banking</h5>
+                <p>Pay with your favourite bank</p>
+              </div>   
+              <div class="netbank-type">
+                <ul>
+                    <li><a href="#"><img src="../images/hdfc-logo.svg" alt="" title="" /> HDFC</a></li>
+                    <li><a href="#"><img src="../images/icici-logo.svg" alt="" title="" /> ICICI</a></li>
+                    <li><a href="#"><img src="../images/sbi-logo.svg" alt="" title="" /> SBI</a></li>
+                </ul>
+              </div>
+              <div class="form-group otherbank">
+                <label>Other Banks</label>
+                <select class="form-select">
+                    <option value="" disabled selected>Select Bank</option>
+                    <option>Option1</option>
+                    <option>Option2</option>
+                    <option>Option3</option>
+                </select>
+              </div>              
+              <div class="button-group group2 mt-4">
+                <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#paymentFailedModal" class="btn btn-outline-danger me-3">Payment Failure</a>
+                <a href="delivery-process-payment-success.html" class="btn btn-success">Payment Success</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Valid Mobile Number Modal End  -->
+
+    <!-- Payment Modal Start -->
+    <div class="modal custom-modal-md" id="paymentFailedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">          
+          <div class="modal-body text-center pb-5">
+            <h5 class="error-heading">Payment failed!</h5>
+            <div class="icon red">
+              <img src="../images/error.svg" class="img-fluid" alt="" title="" />
+            </div>
+            <p class="desc">We’re sorry, your payment encountered an error. <br/>
+              Please try again!</p>
+            <p class="text-gray">If money was debited from your account, it will be refunded <br/> within 2-3 business days. Please contact your bank if any issue persists.</p>
+            <div class="button-group group2 mt-5">
+              <a href="javascript:;" data-bs-dismiss="modal" class="btn btn-outline-primary me-3">End Process</a>
+              <a href="delivery-process-payment-process.html" class="btn btn-primary">Retry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- Payment Modal End  -->
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>

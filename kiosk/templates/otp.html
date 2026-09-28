@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bharatgas Kiosk</title>
+
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+  </head>
+  <body>    
+    <section class="main-section hv100">
+        <div class="container-fluid p-0 hv100">
+            <div class="row hv100 gx-0">
+                <div class="col-lg-4 col-md-4 col-12 hv100">
+                    <div class="page-left hv100">
+                        <div class="logo-content">
+                            <img src="images/logo.svg" class="img-fluid logo" alt="" title="Bharat Gas" />
+                            <h1>Welome to <br/> Bharatgas!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-12">
+                    <div class="page-right">
+                        <div class="content-center">
+                            <div class="language-select">
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Eng
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+                                        <li class="active"><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="keyboard-cover otp-cover mt-3">
+                                <div class="search-box">
+                                    <p class="desc">We have sent a BPCL code on the mobile <br/> number *******678.</p>
+                                    <p>Please enter your 4-digit code <b>*</b></p>
+                                    <div class="otp-group">
+                                      <ul>
+                                          <li><input type="text" class="form-control"></li>
+                                          <li><input type="text" class="form-control"></li>
+                                          <li><input type="text" class="form-control"></li>
+                                          <li><input type="text" class="form-control"></li>
+                                          <li><input type="text" class="form-control"></li>
+                                          <li><input type="text" class="form-control"></li>                                            
+                                      </ul>                                        
+                                      <img src="images/tick-verify.svg" class="otp-verify-icon" alt="" title="" />
+                                  </div>
+                                </div>
+                                <div class="keyboard-input mb-4">
+                                    <ul>
+                                        <li><a href="javascript:;">1</a></li>
+                                        <li><a href="javascript:;">2</a></li>
+                                        <li><a href="javascript:;">3</a></li>
+                                        <li><a href="javascript:;">4</a></li>
+                                        <li><a href="javascript:;">5</a></li>
+                                        <li><a href="javascript:;">6</a></li>
+                                        <li><a href="javascript:;">7</a></li>
+                                        <li><a href="javascript:;">8</a></li>   
+                                        <li><a href="javascript:;">9</a></li>
+                                        <li><a href="javascript:;">Clear</a></li>
+                                        <li><a href="javascript:;">0</a></li>    
+                                        <li class="clear"><a href="javascript:;"><img src="images/num-clear.svg" class="img-fluid" alt="" title="" /></a></li>
+                                    </ul>
+                                </div>
+                                <a href="delivery-process.html" class="btn btn-light">Verify</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incorrect Code Modal Start -->
+    <div class="modal custom-modal-md" id="incorrectCodeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">              
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Incorrect Code</h5>
+              <div class="icon red">
+                <img src="images/error.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">The entered code is incorrect. Please re-enter the code correctly.</p>
+              <p class="text-gray">You have only 2 attempts remaining! </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Incorrect Code Modal End  -->
+
+    <!-- Error Modal Start -->
+    <div class="modal custom-modal-md" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">              
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Error</h5>
+              <div class="icon red">
+                <img src="images/error.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">The code has been incorrectly entered three times. 
+                The session will now expire. </p>
+              <p class="text-gray">You will be redirected to homepage, please try again.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Error Modal End  -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>

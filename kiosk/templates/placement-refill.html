@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}    
+    <section class="main-section hv100 process-page">
+        <div class="container-fluid hv100">
+            <div class="row gx-0 center-container">
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="process-left">
+                        <div class="logo-content mb-5">
+                            <img src="images/logo.svg" class="img-fluid logo" alt="" title="Bharat Gas" />                            
+                        </div>
+                        <div class="timeline-tag">
+                            <ul>
+                                <li class="complete">Cylinder Validation</li>
+                                <li class="active">Placement for Refill</li>
+                                <li>Payment</li>
+                                <li class="last">Cylinder Collection</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>                    
+                        <h3 class="mt-5">Please place your empty cylinder inside the chamber, then select ‘Continue’ to proceed.</h3>                        
+                        <div class="button-group mt-5">
+                            <a href="#" class="btn btn-outline-light white-btn me-3">Cancel</a>
+                            <a id="cylindervalidate" class="btn btn-light white-btn">Continue</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="process-right">
+                        <div class="content-center">
+                            <div class="language-select float-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Eng
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+                                        <li class="active"><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>                            
+                            <div class="animation-image text-end half">
+                                <img src="images/refill-animation-1.gif" alt="Animtion" title="Animation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancel Modal Start -->
+    <div class="modal custom-modal-md" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">            
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Cancel</h5>
+              <div class="icon red">
+                <img src="images/cancel.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">You have selected ‘Cancel,’ this will terminate the process. <br/> <strong>Are you sure you want to proceed with cancellation?</strong>  </p>
+              <p class="text-gray">You are just 4 steps away from completion.</p>
+              <div class="button-group group2 mt-5">
+                <a href="#" class="btn btn-outline-primary me-3">Cancel</a>
+                <a href="delivery-process-payment-process.html" class="btn btn-primary">Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Cancel Modal End  -->
+
+{%endblock%}
