@@ -1,0 +1,208 @@
+@media (max-width: 767px){
+    
+    
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+  
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+ 
+	.welcome-bg {
+        background-size: auto;
+    }
+    .page-left .logo-content .logo {
+        width: 200px;
+    }
+    .page-left .logo-content h1 {
+      font-size: 44px;
+      line-height: 50px;
+    }
+    .page-right .language-options {
+      width: 90%;
+    }
+    .delivery-content h3 {
+      font-size: 30px;
+      line-height: 40px;
+      margin-top: 25px;
+    }
+    .delivery-content p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .delivery-content {
+      margin: 0 0 20px;
+    }
+    .quick-timeline ul li {
+      font-size: 14px;
+      padding-top: 0;
+    }
+    .process-page {
+      padding: 0 10px;
+    }
+    .process-page .center-container {
+      padding: 0 30px;
+    }
+    .timeline-tag ul li {
+        width: 130px;
+        font-size: 12px;
+        padding-top: 4px;
+    }
+    .page-right.delivery-process .content-center {
+      padding: 0 30px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1485px) {
+  .welcome-bg {
+    background-size: auto;
+  }
+  .page-left .logo-content .logo {
+    width: 200px;
+  }
+  .page-left .logo-content h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .page-right .language-options {
+    width: 90%;
+  }
+  .quick-timeline ul li {
+    padding-top: 0;
+  }
+  .quick-timeline-content ul li br {
+    display: none;
+  }
+  .process-page {
+    padding: 0 20px;
+  }
+  .process-page .center-container {
+    padding: 0 25px;
+  }
+  .process-page .center-container {
+    padding: 0 30px;
+  }
+  .timeline-tag ul li {
+      width: 190px;
+  }
+}
+
+/* Desktop 4K */
+@media (min-width: 1920px) and (max-width: 2560px)  {
+
+    .page-right .keyboard-cover .keyboard-input ul {
+        gap: 25px;
+    }
+    .page-right .keyboard-cover .keyboard-input ul li a {        
+        font-size: 28px;       
+        height: 70px;
+    }
+    .process-page .process-left h3 {
+        font-size: 48px;
+    }
+    .payment-cover {
+        padding: 30px 40px;
+    }
+    .payment-cover h3 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .payment-cover .payment-info p {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+
+    .payment-success-content h3 {
+        font-size: 48px;
+      }
+      
+      .payment-success-content p {
+        font-size: 32px;
+        line-height: 44px;
+        color: #fff;
+      }
+      .emoji-rating p {
+        font-size: 32px;
+        line-height: 44px;
+        color: #fff;
+      }
+      .emoji-rating ul {
+        margin-top: 30px;
+      }
+
+      .quick-timeline-content ul li {
+        font-size: 22px;
+        line-height: 30px;
+      }
+      .quick-timeline ul li {
+        padding-top: 8px;
+      }
+      .quick-process .delivery-content h3 {
+        margin-top: 30px;
+      }
+
+      /* Payment Type */
+      .payment-process .payment-amount h3 {
+        font-size: 48px;
+      }
+      .payment-process .payment-amount p {
+        font-size: 32px;
+      }
+      .payment-process .payment-amount {
+        margin-top: 35px;
+      }
+      .payment-process .payment-type {
+        margin-top: 45px;
+      }
+      .payment-type .payment-row {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+      }
+      .payment-process .radiobuttons label {
+        font-size: 24px;
+      }
+      .payment-process .radiobuttons label img {
+        margin: -5px 10px 0 0;
+      }
+      .payment-process .payment-row p {
+        font-size: 18px;
+      }
+      
+    #paymentFailedModal .modal-body {
+        padding: 20px !important;
+    }
+    #paymentFailedModal .modal-body p {
+        font-size: 28px;
+    }
+
+    .form-white .form-group label {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .form-white .form-group .form-control {
+      height: 80px;
+      font-size: 28px;
+    }
+    .form-white .form-group .form-select {
+      height: 80px;
+      font-size: 28px;
+    }
+    .form-white .form-group {
+      margin-bottom: 30px;
+    }
+      
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) { 	
+   
+  
+}
+
+/* Client */
+@media (min-width: 1921px) and (max-width: 5120px)  {  
+
+  
+}

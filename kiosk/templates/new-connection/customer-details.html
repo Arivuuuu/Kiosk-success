@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bharatgas Kiosk</title>
+
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+
+  </head>
+  <body class="blue-bg">    
+    <section class="main-section hv100 process-page">
+        <div class="container-fluid hv100">
+            <div class="row gx-0 center-container">
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-12">
+                    <div class="process-left">
+                      <div class="logo-content mb-5">
+                        <img src="../images/logo.svg" class="img-fluid logo" alt="" title="Bharat Gas" />                            
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-12">
+                    <div class="language-select float-end">
+                      <div class="dropdown">
+                          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Eng
+                          </button>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">हिन्दी</a></li>
+                              <li class="active"><a class="dropdown-item" href="#">English</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="process-left">                        
+                        <div class="timeline-tag">
+                            <ul>
+                                <li class="active">Enter Details</li>
+                                <li>Payment</li>
+                                <li class="last">Cylinder Collection</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h3 class="mt-5">Please enter your details below:</h3>
+                        <div class="form-white pe-5 mt-4">
+                          <form>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>Name</label>
+                                  <input type="text" class="form-control" placeholder="Type here" />
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>Gender</label>
+                                  <div class="radiobuttons white">
+                                    <div class="radio radio-primary radio-inline"> <input name="radio" value="1" id="radio1" type="radio">
+                                      <label for="radio1">Male</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                      <input name="radio" value="2" id="radio2" type="radio" checked>
+                                      <label for="radio2">Female</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                      <input name="radio" value="3" id="radio3" type="radio" checked>
+                                      <label for="radio3">Other</label>
+                                    </div>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>POI Type</label>
+                                  <select class="form-select">
+                                    <option>Aadhaar Card </option>
+                                    <option>PAN Card</option>
+                                    <option>Voter ID</option>
+                                    <option>Driving License</option>
+                                    <option>Student ID</option>
+                                    <option>Govt issued ID Card</option>
+                                  </select>
+                                  <p class="error-text"><iconify-icon icon="stash:exclamation-circle-solid"></iconify-icon> Please select POI type</p>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>POI Details</label>
+                                  <input type="text" class="form-control" placeholder="Text here" />
+                                  <p class="error-text"><iconify-icon icon="stash:exclamation-circle-solid"></iconify-icon> Invalid Aadhaar Number</p>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>Cylinder Type</label>
+                                  <input type="text" class="form-control" placeholder="Text here" value="5 kg LPG Cylinder" disabled readonly />
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label>Mobile Number</label>
+                                  <input type="text" class="form-control" placeholder="Text here" value="9986545678" disabled readonly />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-group mt-3">
+                              <a href="#" class="btn btn-outline-light white-btn me-3">Cancel</a>
+                              <a href="poi-front.html" class="btn btn-light white-btn">Continue</a>
+                            </div>
+                          </form>
+                        </div>                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error Modal Start -->
+    <div class="modal custom-modal-md" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">           
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Error</h5>
+              <div class="icon red">
+                <img src="../images/error.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">No cylinder placed, the session will now expire.</p>
+              <p class="text-gray">You will be redirected to homepage. Please retry.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Error Modal End  -->
+
+    <!-- Cancel Modal Start -->
+    <div class="modal custom-modal-md" id="cancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">           
+            <div class="modal-body text-center pb-5">
+              <h5 class="error-heading">Cancel</h5>
+              <div class="icon red">
+                <img src="../images/cancel.svg" class="img-fluid" alt="" title="" />
+              </div>
+              <p class="desc">You have selected ‘Cancel,’ this will terminate the process. <br/> <strong>Are you sure you want to proceed with cancellation?</strong>  </p>
+              <p class="text-gray">You are just 4 steps away from completion.</p>
+              <div class="button-group group2 mt-5">
+                <a href="#" class="btn btn-outline-primary me-3">Cancel</a>
+                <a href="delivery-process-payment-process.html" class="btn btn-primary">Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Cancel Modal End  -->
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>

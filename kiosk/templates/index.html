@@ -1,0 +1,22 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <section class="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="welcome-content">
+                        <img src="{% static 'images/logo.svg' %}" class="img-fluid logo" alt="" title="Bharat Gas" />
+                        <h1>Welcome to <br/> Bharatgas!</h1>
+                        <a href="language.html" class="btn btn-primary">Let's Start</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   {%endblock%}
