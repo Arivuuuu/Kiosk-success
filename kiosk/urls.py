@@ -39,4 +39,5 @@ urlpatterns = [
     path('check-ai-initiation/', InitiateAIValidtion.as_view(), name='Check Ai initiation'),
     path('get-kiosk-id/', GetKioskInfo.as_view(), name='kiosk-info'),
     path('reset-stock/', ResetStock.as_view(), name='reset-stock'),
+    path('/id-proof/scan-window', IDProofScanWindowView.as_view(), name="id-proof-scan-window")
 ]
