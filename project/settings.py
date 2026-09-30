@@ -31,7 +31,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'kiosk.middleware.KioskAuthentication',
-    'project.geo_restrict.CountryRestrictionMiddleware'
+    #'project.geo_restrict.CountryRestrictionMiddleware'
 
 ]
 
